@@ -1,0 +1,39 @@
+<html itemscope itemtype="http://schema.org/Product" prefix="og: http://ogp.me/ns#" xmlns="http://www.w3.org/1999/html">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="content-type" content="text/html;charset=utf-8">
+
+    </head>
+    <body>
+
+        <div id="jitsidiv" style="width:600px;height:100%">
+        </div>
+<!--        <script src="external_api.js"></script>-->
+        <script src="https://meet.jit.si/external_api.js"></script>
+<!--        <script src="https://alpha.jitsi.net/external_api.js"></script>-->
+        <script>
+
+            // var domain = "s-it-develop-1.develop.kikkoman-sit.com";
+            // var domain = "alpha.jitsi.net";
+            var domain = "meet.jit.si";
+            var options = {
+                roomName: "jitsi Meet",
+                width: "100%",
+                height: "100%",
+                parentNode: document.querySelector('#jitsidiv'),
+                configOverwrite: {
+                	disableDeepLinking: true,
+                    // startsWithAudioMuted:true
+                },
+                interfaceConfigOverwrite: {
+                    filmStripOnly:true
+                },
+                userInfo: {
+			        displayName: 'KIKKOMAN'
+			    },
+            }
+            var api = new JitsiMeetExternalAPI(domain, options);
+            api.executeCommand('subject','キッコマン チャット サービス');
+        </script>
+    </body>
+</html>
