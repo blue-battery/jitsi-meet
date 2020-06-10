@@ -22,11 +22,11 @@
     // var domain = "47.104.94.124"; //不能用
     // var domain = "aiwan3d.com";
     var domain = "meet.jit.si";
+    // var domain = "s-it-develop-1.develop.kikkoman-sit.com";
     var subdomain = "";
     if (subdomain) {
         subdomain = subdomain.substr(0, subdomain.length - 1).split('.').join('_').toLowerCase() + '.';
     }
-    // var domain = "s-it-develop-1.develop.kikkoman-sit.com";
     var options = {
         roomName: "JitsiMeetAPI1",
         // width: "100%",
@@ -52,13 +52,13 @@
                         ideal: 720,
                         max: 720,
                         // min: 180
-                        min: 320
+                        min: 360
                     },
                     width: {
                         ideal: 1280,
                         max: 1280,
                         // min: 320
-                        min: 640
+                        min: 720
                     }
                 }
             },
@@ -224,7 +224,7 @@
             DEFAULT_LOCAL_DISPLAY_NAME: 'me',
             // SHOW_JITSI_WATERMARK: true,
             SHOW_JITSI_WATERMARK: false,
-            JITSI_WATERMARK_LINK: 'https://jitsi.org',
+            JITSI_WATERMARK_LINK: '',
 
             // if watermark is disabled by default, it can be shown only for guests
             // SHOW_WATERMARK_FOR_GUESTS: true,
@@ -495,11 +495,11 @@
 
     }
     var api = new JitsiMeetExternalAPI(domain, options);
-    // api.executeCommand('displayName', 'My Nickname'); // ニックネーム（表示名）を指定する
+    api.executeCommand('displayName', 'KIKKOMAN'); // ニックネーム（表示名）を指定する
     api.executeCommand('subject', 'キッコーマン チャット サービス'); // チャットルームの件名を指定する
     // api.executeCommand('password', 'The Password');
-    // api.executeCommand('toggleAudio');
-    // api.executeCommand('toggleVideo');
+    api.executeCommand('toggleAudio');
+    api.executeCommand('toggleVideo');
     // api.executeCommand('toggleFilmStrip');
     // api.executeCommand('toggleChat');
     // api.executeCommand('toggleShareScreen');
